@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PageWrapper from "@/components/PageWrapper";
 import CaseStudyMeta from "@/components/CaseStudyMeta";
 import CaseStudySection from "@/components/CaseStudySection";
@@ -7,8 +8,6 @@ import CaseStudyProcess from "@/components/CaseStudyProcess";
 import CaseStudyDecision from "@/components/CaseStudyDecision";
 import CaseStudyFooterNav from "@/components/CaseStudyFooterNav";
 import CaseStudySummary from "@/components/CaseStudySummary";
-import CaseStudyConfidentialityNote from "@/components/CaseStudyConfidentialityNote";
-import Link from "next/link";
 
 export default function MarkelDesignSystemPage() {
   return (
@@ -17,30 +16,37 @@ export default function MarkelDesignSystemPage() {
         href="/#work"
         style={{
           display: "inline-block",
-          marginTop: "2rem",
-          color: "var(--muted)",
-          fontSize: "0.95rem",
+          marginBottom: "2rem",
+          color: "var(--accent)",
+          fontWeight: 600,
         }}
       >
         ← Back to selected work
       </Link>
 
-      <section style={{ paddingTop: "4rem", paddingBottom: "3rem" }}>
-        <p style={{ color: "var(--muted)" }}>Case Study</p>
+      <section style={{ maxWidth: 920 }}>
+        <p
+          style={{
+            color: "var(--accent)",
+            fontWeight: 600,
+            marginBottom: "0.75rem",
+          }}
+        >
+          Case Study
+        </p>
 
-        <h1 style={{ fontSize: "3rem", lineHeight: 1.1, marginTop: "1rem" }}>
-          Markel Internal Design System
-        </h1>
+        <h1>Markel Internal Design System</h1>
 
         <p
           style={{
-            fontSize: "1.25rem",
             color: "var(--muted)",
-            maxWidth: 720,
+            fontSize: "1.25rem",
+            lineHeight: 1.7,
+            marginTop: "1rem",
           }}
         >
-          Creating a scalable component library and design foundation to
-          modernise Markel’s internal product ecosystem.
+          Designing and building an Angular component library and documentation
+          platform to standardise internal applications across Markel.
         </p>
       </section>
 
@@ -49,17 +55,17 @@ export default function MarkelDesignSystemPage() {
           {
             label: "The problem",
             value:
-              "Internal applications varied widely in UI patterns, usability, visual language and code conventions, creating inconsistency and growing UX debt.",
+              "Internal applications were inconsistent in layout, UI behaviour and implementation, with no central reference for reusable patterns.",
           },
           {
             label: "The work",
             value:
-              "I led the design and front-end architecture of a reusable Angular and Bootstrap design system, covering foundations, components, documentation and governance.",
+              "I designed and developed a reusable Angular design system with standalone components, layout patterns, utilities, documentation and live usage examples.",
           },
           {
             label: "The outcome",
             value:
-              "The system became the foundation for new internal applications and redesigns, improving consistency, delivery speed and scalability across Markel products.",
+              "The system gives teams a scalable foundation for building consistent internal applications faster, with clearer documentation and stronger design-development alignment.",
           },
         ]}
       />
@@ -80,197 +86,264 @@ export default function MarkelDesignSystemPage() {
           },
           {
             label: "Focus",
-            value: "Enterprise product ecosystem",
+            value: "Component library & documentation",
           },
         ]}
       />
 
-      <CaseStudyCallout title="A design system that bridges product design and front-end delivery">
+      <CaseStudyCallout
+        eyebrow="Key highlight"
+        title="A design system built for real product delivery"
+      >
         <p>
-          This project was not only about making Markel’s internal tools look
-          consistent. It was about creating reusable patterns, component
-          architecture and documentation that could help teams build complex
-          internal applications faster and with a higher baseline of quality.
+          This was not just a visual component library. I designed and built a
+          working Angular system with developer-focused documentation, live
+          examples, usage guidance and reusable patterns that support complex
+          internal product workflows.
         </p>
       </CaseStudyCallout>
 
-       <CaseStudyImageBlock
-        imageSrc="/visuals/markel-design-system/Frame 4.png"
-        imageAlt="Design system component index grouped by display and feedback, form inputs, navigation, and data tables."
-        label="Design system structure"
-        title="Organising components by product use case"
-        description="Components were grouped into categories such as feedback, forms, navigation and data-heavy table patterns to help teams find and apply them consistently."
-        />
+      <CaseStudyImageBlock
+        imageSrc="/visuals/markel-design-system/alertBanner.png"
+        imageAlt="Alert banner documentation page showing overview, usage guidance, examples and code navigation."
+        label="Documentation platform"
+        title="Developer-focused documentation for reusable Angular components"
+        description="Each component page gives teams a central place to understand behaviour, variants, usage guidance and implementation details, helping the system feel practical rather than theoretical."
+      />
 
       <CaseStudySection title="Overview" eyebrow="Context">
         <p>
-          When I joined Markel, internal applications varied widely across visual
-          design, usability, UI patterns and code conventions. Teams were often
-          rebuilding similar components from scratch, which created duplicated
-          effort, inconsistent experiences and growing design and technical debt.
+          I designed and developed an Angular-based design system to standardise
+          the look, behaviour and implementation of Markel’s internal
+          applications. The system includes reusable standalone components,
+          layout patterns, utilities and a dedicated documentation site to
+          support adoption across product teams.
         </p>
 
         <p>
-          As part of a broader initiative to modernise internal tools, I led the
-          creation of a scalable design system for use across the business. The
-          system defines both the visual foundation and reusable front-end
-          component architecture for future Markel products.
+          The goal was to create a shared foundation that could help teams build
+          consistent screens faster, reduce duplicated implementation effort and
+          give developers clearer guidance when working on complex internal
+          tools.
         </p>
       </CaseStudySection>
 
-      <CaseStudySection title="The Challenge" eyebrow="Problem">
+      <CaseStudyImageBlock
+        imageSrc="/visuals/markel-design-system/homePage.png"
+        imageAlt="Markel Design System homepage showing tech stack, layout system and CSS guidelines."
+        label="System foundations"
+        title="A central home for foundations, layout guidance and component documentation"
+        description="The documentation site brings together the technical stack, layout system, SCSS guidance and component library so teams have one place to understand how the system should be used."
+      />
+
+      <CaseStudySection title="System structure" eyebrow="Design system layers">
         <p>
-          Markel’s internal products support complex, data-heavy workflows,
-          particularly across underwriting and operational tools. These
-          interfaces need to handle dense information, validation, filtering,
-          multi-step flows, status indicators, batch actions and contextual
-          menus.
+          The design system is structured around three connected layers: a
+          reusable Angular component library, a developer-focused documentation
+          platform, and a set of layout and pattern foundations that help teams
+          build complete, consistent screens — not just isolated UI elements.
         </p>
 
-        <p>
-          Without shared standards, teams approached these problems differently.
-          This led to visual inconsistency, duplicated code, slower onboarding
-          for developers and a less predictable experience for users moving
-          between internal applications.
-        </p>
+        <ul>
+          <li>
+            <strong>Component library:</strong> reusable form controls, data
+            components, feedback patterns and navigation components.
+          </li>
+          <li>
+            <strong>Documentation site:</strong> live examples, real usage
+            scenarios, copyable snippets and implementation guidance.
+          </li>
+          <li>
+            <strong>Layout and patterns:</strong> page structures, form
+            composition, spacing, typography and reusable screen patterns.
+          </li>
+        </ul>
       </CaseStudySection>
 
       <CaseStudyProcess
+        // title="How I approached it"
         steps={[
           {
             title: "Define foundations",
             description:
-              "Established shared principles for colour, typography, spacing, accessibility, iconography and interaction behaviour across internal products.",
+              "Established shared guidance for layout, spacing, typography, colour, SCSS structure and implementation principles.",
           },
           {
             title: "Build reusable components",
             description:
-              "Designed and implemented core Angular and Bootstrap components, supported by a custom SCSS token library for consistent styling.",
+              "Designed and developed Angular standalone components with consistent APIs, configurable states and reusable variants.",
           },
           {
-            title: "Document usage patterns",
+            title: "Document real usage",
             description:
-              "Created documentation covering component behaviour, code examples, accessibility notes, usage guidance, limitations and anti-patterns.",
+              "Created documentation pages with live examples, practical scenarios, usage guidance, implementation notes and code snippets.",
           },
           {
-            title: "Create governance and feedback loops",
+            title: "Refine through adoption",
             description:
-              "Established a contribution model so teams could request enhancements, validate needs and adopt components with clearer release guidance.",
+              "Tested components through live product work and developer feedback, improving the system as real requirements emerged.",
           },
         ]}
       />
 
-      <CaseStudyDecision
-        decisions={[
-          {
-            decision:
-              "Prioritise data-heavy components early",
-            rationale:
-              "Many Markel applications rely on dense operational data, so components like grids, filters, badges and contextual menus would have the biggest immediate value.",
-            impact:
-              "Helped teams support complex workflows more consistently while reducing the need to rebuild common interface patterns from scratch.",
-          },
-          {
-            decision:
-              "Build the system in the same stack used by delivery teams",
-            rationale:
-              "The design system needed to be practical for real implementation, not just a Figma library disconnected from engineering workflows.",
-            impact:
-              "Made adoption easier by providing reusable Angular, Bootstrap and SCSS patterns that developers could integrate directly into applications.",
-          },
-          {
-            decision:
-              "Create documentation for both usage and contribution",
-            rationale:
-              "A design system only scales if teams understand when to use components, how they behave and how to request changes safely.",
-            impact:
-              "Improved consistency, reduced ambiguity and created a more sustainable model for evolving the system over time.",
-          },
-          {
-            decision:
-              "Design for evolution rather than a fixed library",
-            rationale:
-              "Markel’s internal tools will continue to grow, especially through initiatives such as One Workflow and future analytics capabilities.",
-            impact:
-              "Created a foundation that can expand into new components, layout templates, notifications and cross-application behaviours.",
-          },
-        ]}
+      <CaseStudyImageBlock
+        imageSrc="/visuals/markel-design-system/docUpload.png"
+        imageAlt="Document upload component documentation showing reusable layers, component overview and drag-and-drop upload area."
+        label="Composite component"
+        title="Document upload patterns built from reusable component layers"
+        description="The document upload documentation shows how smaller components can combine into a complete workflow, helping teams build richer interfaces while keeping the underlying system reusable."
       />
 
-    <CaseStudyImageBlock
-    imageSrc="/visuals/markel-design-system/Frame 1.png"
-    imageAlt="Badge component documentation showing text label badges, square badges and pill badge variants."
-    label="Component variants"
-    title="Badge variants for status, labels and counters"
-    description="Badge documentation covered multiple variants including text labels, square counters and pill badges, helping teams apply consistent status and notification patterns across internal applications."
-    />
-
-    <CaseStudyImageBlock
-    imageSrc="/visuals/markel-design-system/Frame 7.png"
-    imageAlt="Alert banner documentation showing variations with primary actions, secondary actions and close behaviour."
-    label="Interaction patterns"
-    title="Alert banner variations with actions and close behaviour"
-    description="Alert banner documentation covered different combinations of actions, close behaviour and usage patterns to support consistent feedback across internal applications."
-    />
-
-      <CaseStudySection title="Component System" eyebrow="Design & build">
+      <CaseStudySection title="Component library" eyebrow="Design & build">
         <p>
-          The design system includes foundations and reusable components for the
-          patterns most commonly needed across Markel’s internal tools. This
-          includes form controls, navigation patterns, buttons, status badges and
-          complex table interactions.
+          The component library includes reusable UI patterns for forms, data,
+          feedback, navigation and workflow-heavy interfaces. Components are
+          designed with consistent APIs, configurable states and variants, and
+          implementation patterns that make them easier for developers to adopt.
         </p>
 
         <p>
-          One of the most important components is the data grid, designed to
-          support server-side async loading, configurable columns, validation,
-          conditional formatting, sorting, filtering, pagination, multi-select
-          and row or cell-level actions.
+          I focused on real internal product needs rather than isolated UI demos.
+          This meant prioritising components that appear repeatedly across
+          enterprise tools, including status badges, tables, upload workflows,
+          alerts, progress indicators, search, pagination and form inputs.
         </p>
       </CaseStudySection>
 
-      <CaseStudySection title="Governance" eyebrow="Scaling adoption">
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+          gap: "1.25rem",
+          marginTop: "3rem",
+        }}
+      >
+        <CaseStudyImageBlock
+          imageSrc="/visuals/markel-design-system/bagde.png"
+          imageAlt="Badge component documentation showing overview, types, examples and usage guidance."
+          label="Component variants"
+          title="Badges for status, counts and lightweight metadata"
+          description="Badge documentation explains when to use each badge type and how colour variants should communicate meaning across internal applications."
+        />
+
+        <CaseStudyImageBlock
+          imageSrc="/visuals/markel-design-system/progTracker.png"
+          imageAlt="Progress tracker documentation showing examples for basic steps, status states, counts and sub-labels."
+          label="Workflow component"
+          title="Progress trackers for multi-step enterprise journeys"
+          description="Progress tracker patterns support step-based workflows, with variants for completion status, counts and additional sub-label context."
+        />
+      </div>
+
+      <CaseStudySection title="Documentation approach" eyebrow="Adoption">
         <p>
-          To keep the system stable and trustworthy, I established documentation
-          and contribution guidance covering component usage, accessibility,
-          code examples, release notes and known limitations.
+          A key part of the project was making the system easy to understand and
+          use. The documentation site was designed for developers as much as
+          designers, with a consistent page structure that explains what each
+          component is for, how it behaves, when to use it and how to implement
+          it.
         </p>
 
         <p>
-          Teams can request enhancements or new components, which are reviewed
-          against user need, technical feasibility and wider product consistency
-          before being added to the system.
+          Each component page follows a predictable structure with overview,
+          patterns, guidance and code examples. This reduces guesswork and helps
+          teams make consistent decisions without needing to reinvent UI behaviour
+          for every product.
         </p>
       </CaseStudySection>
 
-    <CaseStudyImageBlock
-    imageSrc="/visuals/markel-design-system/Frame 6.png"
-    imageAlt="Progress tracker component documentation showing multiple steps and sub-step labels."
-    label="Workflow component"
-    title="Progress tracker designed for complex multi-step processes"
-    description="The progress tracker component was documented with support for multiple steps and optional sub-step labels, helping teams apply a consistent pattern across longer enterprise workflows."
-    />
+      <CaseStudyImageBlock
+        imageSrc="/visuals/markel-design-system/tableCode.png"
+        imageAlt="Table component documentation showing copyable code snippets and full-size table examples."
+        label="Developer experience"
+        title="Copyable code examples paired with real interface patterns"
+        description="The documentation supports implementation as well as design guidance, giving developers reusable snippets and full-size examples for common enterprise patterns such as tables and sticky columns."
+      />
+
+      <CaseStudySection title="Key improvements" eyebrow="Before and after">
+        <p>
+          Before the design system, teams were manually styling layouts,
+          rebuilding common components and making separate decisions about UI
+          behaviour. The new system provides a shared reference point for both
+          design and implementation.
+        </p>
+      </CaseStudySection>
+
+
+        <CaseStudyDecision
+            decisions={[
+                {
+                decision: "Improve consistency across internal applications",
+                rationale:
+                    "Before the design system, teams were manually styling layouts and making separate decisions about UI behaviour, which created inconsistent experiences across products.",
+                impact:
+                    "Created a shared visual and interaction language across components, layouts, spacing and common interface patterns.",
+                },
+                {
+                decision: "Support developer adoption through documentation",
+                rationale:
+                    "Developers needed more than reusable components — they needed guidance, live examples, implementation details and clear usage patterns.",
+                impact:
+                    "Reduced guesswork by providing a dedicated documentation site with consistent page structures, practical examples and copyable snippets.",
+                },
+                {
+                decision: "Design components around real product needs",
+                rationale:
+                    "The system needed to support complex internal tools, not just isolated UI examples, so components had to work for dense workflows and edge cases.",
+                impact:
+                    "Prioritised reusable patterns such as alerts, badges, progress trackers, document upload, tables and layout structures that could support live product work.",
+                },
+                {
+                decision: "Build for flexibility and future scale",
+                rationale:
+                    "Markel’s internal applications will continue to evolve, so the system needed to support variation without becoming fragmented.",
+                impact:
+                    "Used configurable Angular components, consistent APIs and reusable layout foundations that can expand as new requirements emerge.",
+                },
+            ]}
+            />
+
+
+      <CaseStudySection title="Technical decisions" eyebrow="Implementation">
+        <p>
+          The system is built using Angular standalone components, supported by
+          Bootstrap and a custom SCSS structure. I designed components to be
+          modular and configurable, using patterns such as content projection and
+          TemplateRef where teams needed flexibility for more complex use cases.
+        </p>
+
+        <p>
+          The documentation was built alongside the component library, so
+          adoption guidance evolved at the same time as the implementation. This
+          helped keep the system grounded in live product needs rather than
+          becoming a static reference library.
+        </p>
+      </CaseStudySection>
 
       <CaseStudySection title="Impact" eyebrow="Outcome">
-        <ul style={{ paddingLeft: "1.25rem" }}>
+        <ul>
           <li>
-            Created a shared visual and functional language for Markel internal
+            Created a reusable Angular component library for internal
             applications.
           </li>
           <li>
-            Reduced duplicated component work by giving teams reusable Angular
-            and Bootstrap patterns.
+            Built a dedicated documentation site with live examples and usage
+            guidance.
           </li>
           <li>
-            Improved consistency across data-heavy enterprise workflows.
+            Improved UI consistency across complex internal product workflows.
           </li>
           <li>
-            Established documentation, governance and contribution processes for
-            future scalability.
+            Reduced duplicated implementation effort for common interface
+            patterns.
           </li>
           <li>
-            Provided a foundation for new applications and redesigns, including
-            ongoing One Workflow transformation work.
+            Created a scalable foundation for future applications and redesign
+            work.
+          </li>
+          <li>
+            Established a stronger bridge between design decisions and front-end
+            delivery.
           </li>
         </ul>
       </CaseStudySection>
@@ -278,15 +351,16 @@ export default function MarkelDesignSystemPage() {
       <CaseStudyCallout
         eyebrow="See the system in action"
         title="From shared components to real product redesign"
-        >
+      >
         <p>
-            The design system became a foundation for redesigning key internal workflows,
-            including One Workflow — Markel’s global underwriting platform.
+          The design system became a foundation for redesigning key internal
+          workflows, including One Workflow — Markel’s global underwriting
+          platform.
         </p>
 
-        <a
-            href="/work/markel-1wf"
-            style={{
+        <Link
+          href="/work/markel-1wf"
+          style={{
             display: "inline-block",
             marginTop: "1.25rem",
             background: "var(--accent)",
@@ -294,25 +368,26 @@ export default function MarkelDesignSystemPage() {
             padding: "0.85rem 1.1rem",
             borderRadius: "999px",
             fontWeight: 600,
-            }}
+          }}
         >
-            See the impact in One Workflow →
-        </a>
-        </CaseStudyCallout>
+          See the impact in One Workflow →
+        </Link>
+      </CaseStudyCallout>
 
       <CaseStudySection title="Reflection" eyebrow="Learning">
         <p>
           This project has been a valuable opportunity to combine my UX design
-          and front-end development experience. The most important lesson has
-          been that a design system is not just a collection of components — it
-          is a shared product that needs governance, documentation, adoption and
-          continuous improvement.
+          and front-end development experience. The biggest learning has been
+          that a design system is not just a collection of components — it is a
+          product that needs structure, documentation, adoption and continuous
+          refinement.
         </p>
 
         <p>
-          It has also reinforced how powerful a design system can be in complex
-          enterprise environments, where consistency, accessibility and delivery
-          speed all have a direct impact on the quality of internal tools.
+          Building the system alongside live product work helped keep it
+          practical. It meant the components, patterns and documentation were
+          shaped by real implementation needs, developer feedback and the
+          complexity of Markel’s internal applications.
         </p>
       </CaseStudySection>
 

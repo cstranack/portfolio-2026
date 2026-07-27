@@ -95,3 +95,10 @@ a article:hover {
     grid-template-columns: 1fr !important;
   }
 }
+
+
+@media (max-width: 700px) {
+  .project-card {
+    grid-template-columns: 1fr !important;
+  }
+}

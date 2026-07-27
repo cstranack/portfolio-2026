@@ -105,26 +105,38 @@ export default function Home() {
           </p>
         </div>
 
-        <div style={{ marginTop: "2rem" }}>
+        <div
+          style={{
+            marginTop: "2rem",
+            display: "grid",
+            gap: "1.25rem",
+          }}
+        >
 
           <ProjectCard
             title="Markel Internal Design System"
             description="Led the design and front-end architecture of a reusable Angular and Bootstrap design system for Markel’s internal product ecosystem."
             href="/work/markel-design-system"
+            imageSrc="/visuals/homepage/alertBanner2.png"
+            imageAlt="Preview of the Markel internal design system component library."
             tags={["Design Systems", "Angular", "Enterprise UX"]}
           />
 
           <ProjectCard
-            title="One Workflow Underwriting Redesign"
+            title="One Workflow Product Redesign"
             description="Led UX/UI redesign across Markel’s global underwriting platform, improving Submission Creation and Policy Page workflows."
             href="/work/markel-1wf"
+            imageSrc="/visuals/homepage/1WFExample.png"
+            imageAlt="Preview of the policy page design for Markel's underwriting platform."
             tags={["Enterprise UX", "Underwriting", "Workflow Design"]}
           />
 
           <ProjectCard
-            title="Public Sector Service Consolidation"
+            title="Government Digital Wallet Experience"
             description="Supported content design for a secure login and identity verification service intended to simplify access to public digital services."
             href="/work/public-sector-app"
+            imageSrc="/visuals/homepage/GovExample2.png"
+            imageAlt="Preview of the digital wallet screens."
             tags={["Content Design", "Public Sector", "Service Design"]}
           />
 
@@ -132,6 +144,8 @@ export default function Home() {
             title="Supply Chain Scheduling Redesign"
             description="Redesigned supplier-to-warehouse scheduling journeys for a legacy platform used to manage deliveries across the UK."
             href="/work/legacy-supply-chain"
+            imageSrc="/visuals/homepage/SainsExample.png"
+            imageAlt="Preview of the supply chain scheduling app redesign."
             tags={["Enterprise UX", "Supply Chain", "Prototyping"]}
           />
 
@@ -139,6 +153,8 @@ export default function Home() {
             title="Gen AI ERP Service Enhancement"
             description="Explored how generative AI could help business admins compose, refine and distribute communications more efficiently."
             href="/work/ai-powered-erp"
+            imageSrc="/visuals/homepage/GenAI.png"
+            imageAlt="Preview of the Gen AI ERP app design."
             tags={["AI", "ERP", "Prototyping"]}
           />
         </div>

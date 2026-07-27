@@ -1,62 +1,85 @@
+import Image from "next/image";
 import Link from "next/link";
 
-type Project = {
+type ProjectCardProps = {
   title: string;
   description: string;
   href: string;
   tags?: string[];
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 export default function ProjectCard({
   title,
   description,
   href,
-  tags,
-}: Project) {
+  tags = [],
+  imageSrc,
+  imageAlt = "",
+}: ProjectCardProps) {
   return (
     <Link href={href} style={{ display: "block" }}>
       <article
+        className="project-card"
         style={{
-          border: "1px solid var(--border)",
           background: "var(--surface)",
-          padding: "1.5rem",
+          border: "1px solid var(--border)",
           borderRadius: "20px",
-          marginTop: "1rem",
+          padding: "1.25rem",
           transition: "transform 0.2s ease, box-shadow 0.2s ease",
-          boxShadow: "0 1px 0 rgba(0, 0, 0, 0.03)",
+          overflow: "hidden",
         }}
       >
+        {imageSrc && (
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              aspectRatio: "16 / 8",
+              borderRadius: "16px",
+              overflow: "hidden",
+              background: "var(--surface-soft)",
+              border: "1px solid var(--border)",
+              marginBottom: "1.25rem",
+            }}
+          >
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              style={{
+                objectFit: "cover",
+                objectPosition: "left top",
+              }}
+              sizes="(max-width: 700px) 100vw, 1000px"
+            />
+          </div>
+        )}
+
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
             gap: "1rem",
             alignItems: "flex-start",
+            marginBottom: "0.75rem",
           }}
         >
-          <div>
-            <p
-              style={{
-                color: "var(--accent)",
-                fontSize: "0.85rem",
-                fontWeight: 600,
-                marginBottom: "0.75rem",
-              }}
-            >
-              Case study
-            </p>
-
-            <h3 style={{ fontSize: "1.5rem", maxWidth: 620 }}>{title}</h3>
-          </div>
+          <p
+            style={{
+              margin: 0,
+              color: "var(--muted)",
+              fontSize: "0.9rem",
+            }}
+          >
+            Case study
+          </p>
 
           <span
             style={{
-              border: "1px solid var(--accent-soft)",
-              background: "var(--accent-soft)",
-              borderRadius: "999px",
-              padding: "0.35rem 0.65rem",
-              color: "var(--accent-strong)",
-              fontSize: "0.9rem",
+              color: "var(--accent)",
+              fontWeight: 600,
               whiteSpace: "nowrap",
             }}
           >
@@ -64,35 +87,28 @@ export default function ProjectCard({
           </span>
         </div>
 
-        <p
-          style={{
-            color: "var(--muted)",
-            maxWidth: 720,
-            marginTop: "1rem",
-          }}
-        >
-          {description}
-        </p>
+        <h3 style={{ margin: "0 0 0.75rem" }}>{title}</h3>
 
-        {tags && (
+        <p style={{ color: "var(--muted)", marginTop: 0 }}>{description}</p>
+
+        {tags.length > 0 && (
           <div
             style={{
-              marginTop: "1.25rem",
               display: "flex",
-              gap: "0.5rem",
               flexWrap: "wrap",
+              gap: "0.5rem",
+              marginTop: "1rem",
             }}
           >
             {tags.map((tag) => (
               <span
                 key={tag}
                 style={{
-                  fontSize: "0.8rem",
-                  padding: "0.3rem 0.65rem",
-                  border: "1px solid var(--border)",
+                  background: "var(--accent-soft)",
+                  color: "var(--accent-strong)",
                   borderRadius: "999px",
-                  color: "var(--muted)",
-                  background: "var(--bg)",
+                  padding: "0.35rem 0.6rem",
+                  fontSize: "0.8rem",
                 }}
               >
                 {tag}
