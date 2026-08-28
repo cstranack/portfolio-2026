@@ -1,292 +1,156 @@
+import Link from "next/link";
 import PageWrapper from "@/components/PageWrapper";
 import CaseStudyMeta from "@/components/CaseStudyMeta";
-import CaseStudySection from "@/components/CaseStudySection";
-import CaseStudyCallout from "@/components/CaseStudyCallout";
 import CaseStudyImageBlock from "@/components/CaseStudyImageBlock";
-import CaseStudyProcess from "@/components/CaseStudyProcess";
-import CaseStudyDecision from "@/components/CaseStudyDecision";
-import CaseStudyFooterNav from "@/components/CaseStudyFooterNav";
-import CaseStudySummary from "@/components/CaseStudySummary";
 import CaseStudyConfidentialityNote from "@/components/CaseStudyConfidentialityNote";
-import Link from "next/link";
+import CaseStudyFooterNav from "@/components/CaseStudyFooterNav";
+import WalletHeroVisual from "@/components/WalletHeroVisual";
+import IdentityTrustVisual from "@/components/IdentityTrustVisual";
 
 export default function PublicSectorAppPage() {
   return (
     <PageWrapper>
-      <Link
-        href="/#work"
-        style={{
-          display: "inline-block",
-          marginTop: "2rem",
-          color: "var(--muted)",
-          fontSize: "0.95rem",
-        }}
-      >
+      <Link href="/#work" className="wallet-back-link">
         ← Back to selected work
       </Link>
 
-      <section style={{ paddingTop: "4rem", paddingBottom: "3rem" }}>
-        <p style={{ color: "var(--muted)" }}>Case Study</p>
-
-        <h1 style={{ fontSize: "3rem", lineHeight: 1.1, marginTop: "1rem" }}>
-          Government Digital Wallet Experience
-        </h1>
-
-        <p
-          style={{
-            fontSize: "1.25rem",
-            color: "var(--muted)",
-            maxWidth: 720,
-          }}
-        >
-          Supporting content design for a government digital wallet experience,
-          helping users understand how to verify their identity and access secure
-          government-issued documents through GOV.UK One Login.
-        </p>
+      <section className="wallet-case-hero">
+        <div className="wallet-case-copy">
+          <p className="wallet-eyebrow">Content design · Digital identity</p>
+          <h1>Designing trust into a government digital wallet.</h1>
+          <p>
+            I shaped content across wallet, sign-in and identity-verification journeys,
+            helping people understand why sensitive steps were needed and how to access
+            verified government documents with confidence.
+          </p>
+        </div>
+        <WalletHeroVisual />
       </section>
-
-      <CaseStudySummary
-        items={[
-          {
-            label: "The problem",
-            value:
-              "Users needed a secure and understandable way to access government-issued documents through a digital wallet, supported by identity verification and GOV.UK One Login.",
-          },
-          {
-            label: "The work",
-            value:
-              "I joined the wallet team as a Content Designer, focusing on clarity, trust and guidance across One Login, identity verification and document access journeys.",
-          },
-          {
-            label: "The outcome",
-            value:
-              "I contributed content options, iterated with the wider content team, supported review cycles and prepared clearly labelled Figma and Miro handover materials.",
-          },
-        ]}
-      />
 
       <CaseStudyMeta
         items={[
-          {
-            label: "Role",
-            value: "Content Designer",
-          },
-          {
-            label: "Sector",
-            value: "Public sector",
-          },
-          {
-            label: "Product area",
-            value: "Digital wallet",
-          },
-          {
-            label: "Focus",
-            value: "Identity verification & document access",
-          },
+          { label: "Role", value: "Content Designer" },
+          { label: "Sector", value: "Public sector" },
+          { label: "Product", value: "Government digital wallet" },
+          { label: "Focus", value: "Trust, identity & secure documents" },
         ]}
       />
+
+      <section className="wallet-summary">
+        <article><span>The challenge</span><p>Make unfamiliar identity and document journeys feel secure without overwhelming a broad public audience.</p></article>
+        <article><span>My contribution</span><p>Content options, journey guidance, cross-team iteration and structured handover across connected services.</p></article>
+        <article><span>The outcome</span><p>Clearer explanations and instructions ready for review, sign-off, continuation and translation.</p></article>
+      </section>
 
       <CaseStudyConfidentialityNote />
 
-      <CaseStudyCallout title="Designing content for secure, high-trust digital journeys">
-        <p>
-          The wallet experience needed to feel clear, trustworthy and accessible
-          for a broad public audience. My focus was on helping users understand
-          what was happening, why identity verification was needed and how secure
-          government documents could be accessed through the wider One Login
-          ecosystem.
-        </p>
-      </CaseStudyCallout>
+      <section className="wallet-context">
+        <div>
+          <p className="wallet-eyebrow">The service ecosystem</p>
+          <h2>One user journey. Several secure services.</h2>
+        </div>
+        <div>
+          <p>
+            People could begin in a public service, move through GOV.UK One Login and
+            identity verification, then return to access or add a document. Internally
+            these were distinct service areas; to users they needed to feel like one
+            coherent journey.
+          </p>
+          <p>
+            My role was to keep people oriented: where they were, why they had moved,
+            what information was needed and what would happen next.
+          </p>
+        </div>
+      </section>
 
       <CaseStudyImageBlock
         imageSrc="/visuals/public-sector-app/graphic4.jpeg"
-        imageAlt="Diagram showing a GOV.UK service journey moving through GOV.UK One Login before returning to the service."
-        label="Service ecosystem"
-        title="Understanding how the wallet connected with GOV.UK One Login"
-        description="A simplified journey showing how users move from a public service into GOV.UK One Login, complete authentication or verification steps, then return to continue or finish their service."
+        imageAlt="Diagram showing a public service journey moving through GOV.UK One Login before returning to the service."
+        label="Connected journey"
+        title="Mapping the handoffs around GOV.UK One Login"
+        description="Understanding the wider ecosystem helped the team write content around the user’s task rather than the boundaries between internal services."
       />
 
-      <CaseStudySection title="Overview" eyebrow="Context">
-        <p>
-          I worked as part of the wallet team, exploring how a government digital
-          wallet could help users access secure government-issued documents such
-          as veteran cards, with potential future support for documents like ID
-          and passports.
-        </p>
+      <section className="wallet-principles">
+        <div className="wallet-principles-heading">
+          <p className="wallet-eyebrow">Content strategy</p>
+          <h2>Trust is built one clear answer at a time.</h2>
+          <p>At every sensitive moment, the content needed to answer the question already forming in the user’s mind.</p>
+        </div>
+        <div className="wallet-principle-list">
+          <article><span>01</span><div><h3>Why do you need this?</h3><p>Explain the purpose before asking for sensitive information or an unfamiliar action.</p></div></article>
+          <article><span>02</span><div><h3>What should I do?</h3><p>Turn verification requirements into short, practical and accessible instructions.</p></div></article>
+          <article><span>03</span><div><h3>Is this secure?</h3><p>Use calm, transparent language to show how verification protects access to documents.</p></div></article>
+          <article><span>04</span><div><h3>What happens next?</h3><p>Maintain continuity across service handoffs so people stay confident and oriented.</p></div></article>
+        </div>
+      </section>
 
-        <p>
-          Although much of the journey connected with GOV.UK One Login, the work
-          was viewed through the lens of the wallet experience: how users
-          understand what the wallet is, how documents are added or accessed, and
-          how identity verification supports trust and security.
-        </p>
+      <IdentityTrustVisual />
 
-        <p>
-          The experience sat within a wider ecosystem of public digital services,
-          where users may begin in a service, move through One Login or identity
-          verification, and then return to complete their task or access a
-          document.
-        </p>
-      </CaseStudySection>
+      <section className="wallet-work">
+        <div>
+          <p className="wallet-eyebrow">How I worked</p>
+          <h2>Explore, compare, test and align.</h2>
+        </div>
+        <div className="wallet-work-grid">
+          <article><strong>Understand</strong><p>Reviewed existing flows, research context and decisions after joining mid-project.</p></article>
+          <article><strong>Identify</strong><p>Found moments where reassurance, explanation or clearer instruction was essential.</p></article>
+          <article><strong>Explore</strong><p>Created alternative approaches to compare tone, clarity and confidence.</p></article>
+          <article><strong>Refine</strong><p>Iterated with the wider content team and prepared clearly labelled handover materials.</p></article>
+        </div>
+      </section>
 
-      <CaseStudySection title="The Challenge" eyebrow="Problem">
-        <p>
-          The wallet and verification journeys needed to work for a very broad
-          audience. Users could have different levels of digital confidence,
-          different accessibility needs and different expectations around what it
-          means to store government documents digitally.
-        </p>
+      <section className="wallet-visual-pair">
+        <CaseStudyImageBlock
+          imageSrc="/visuals/public-sector-app/screen-examples.png"
+          imageAlt="Mobile screens showing passport photo and face-scan guidance for identity verification."
+          label="Verification guidance"
+          title="Clear instructions for sensitive steps"
+          description="Content needed to make unfamiliar actions achievable while setting accurate expectations."
+        />
+        <CaseStudyImageBlock
+          imageSrc="/visuals/public-sector-app/screen-examples2.png"
+          imageAlt="Mobile screen showing a digital government document card."
+          label="Verified documents"
+          title="Making digital credentials understandable"
+          description="The wallet introduced a new mental model: secure access to verified documents on a device."
+        />
+      </section>
 
-        <p>
-          Because the service touched on security, trust and personal identity,
-          content needed to be carefully considered. Small wording choices could
-          affect whether users understood the process, trusted the service or
-          knew what action to take next.
-        </p>
+      <section className="wallet-decisions">
+        <div>
+          <p className="wallet-eyebrow">Key decisions</p>
+          <h2>Write for confidence, not internal logic.</h2>
+        </div>
+        <div>
+          <article><h3>Lead with the user’s goal</h3><p>Service architecture stayed in the background; content focused on the task people were trying to complete.</p></article>
+          <article><h3>Be transparent about verification</h3><p>Clear explanations of why, what and next helped make security feel protective rather than obstructive.</p></article>
+          <article><h3>Design for continuation</h3><p>Structured Figma and Miro materials preserved context for in-house designers, reviewers and translation teams.</p></article>
+        </div>
+      </section>
 
-        <p>
-          The challenge was to make unfamiliar concepts feel clear and
-          reassuring without overloading users with too much explanation at once.
-        </p>
-      </CaseStudySection>
-
-      <CaseStudyImageBlock
-        imageSrc="/visuals/public-sector-app/screen-examples.png"
-        imageAlt="Mobile screens showing passport photo and face scan instructions for identity verification."
-        label="Identity verification"
-        title="Designing clear guidance for sensitive verification steps"
-        description="These screens represent the kind of instructional content users need when completing identity verification tasks such as taking a passport photo or scanning their face."
-      />
-
-      <CaseStudyProcess
-        steps={[
-          {
-            title: "Join mid-project and understand the wallet journey",
-            description:
-              "Joined during an existing structured design process, reviewing current flows, content decisions, research context and how the wallet connected with One Login and identity verification.",
-          },
-          {
-            title: "Identify key content moments",
-            description:
-              "Looked for points where users needed important information, reassurance or clearer instructions to understand what was happening and continue confidently.",
-          },
-          {
-            title: "Explore content approaches",
-            description:
-              "Created alternative wording and communication approaches, considering tone, clarity, accessibility, trust and how visuals could support understanding.",
-          },
-          {
-            title: "Review, iterate and hand over",
-            description:
-              "Discussed options with the wider content design team, gained lead sign-off and prepared clearly labelled Figma and Miro materials for handover and translation.",
-          },
-        ]}
-      />
-
-      <CaseStudyDecision
-        decisions={[
-          {
-            decision:
-              "Frame the experience around user trust, not internal service logic",
-            rationale:
-              "The wallet connected several service areas, but users needed a simple explanation of what they were doing and why it mattered.",
-            impact:
-              "Helped keep the content focused on user understanding rather than exposing unnecessary internal complexity.",
-          },
-          {
-            decision:
-              "Use content to explain identity verification clearly",
-            rationale:
-              "Users may feel cautious when asked to verify their identity, especially within a government digital service.",
-            impact:
-              "Supported a more transparent experience by explaining what was happening, why verification was needed and what users needed to do next.",
-          },
-          {
-            decision:
-              "Make digital documents feel secure and understandable",
-            rationale:
-              "A government digital wallet introduces a new mental model for many users, especially when storing sensitive documents such as veteran cards, ID or passports.",
-            impact:
-              "Helped position the wallet as a secure place to access government-issued documents, while keeping the language clear and reassuring.",
-          },
-          {
-            decision:
-              "Create multiple content options before aligning on a direction",
-            rationale:
-              "There were often several possible ways to explain the same moment, each with different implications for tone, clarity and confidence.",
-            impact:
-              "Allowed the content team to compare approaches, choose stronger wording and refine the journey through iteration.",
-          },
-          {
-            decision:
-              "Prepare content clearly for handover and translation",
-            rationale:
-              "The project needed to move into client continuation, and content decisions had to remain understandable beyond my time on the project.",
-            impact:
-              "Made it easier for in-house designers and translation teams to understand the intended content structure and rationale.",
-          },
-        ]}
-      />
-
-      <CaseStudyImageBlock
-        imageSrc="/visuals/public-sector-app/screen-examples2.png"
-        imageAlt="Mobile screen showing a digital document card for an HM Armed Forces Veteran Card."
-        label="Verified documents"
-        title="Supporting access to secure government-issued documents"
-        description="The wallet experience explored how users could access verified government documents, such as veteran cards, with potential future support for documents like ID and passports."
-      />
-
-      <CaseStudySection title="Impact" eyebrow="Outcome">
-        <ul style={{ paddingLeft: "1.25rem" }}>
-          <li>
-            Contributed content design to selected wallet, One Login and identity
-            verification journeys.
-          </li>
-          <li>
-            Helped improve clarity, tone and communication of key information
-            around secure document access.
-          </li>
-          <li>
-            Supported clearer guidance for sensitive identity verification steps.
-          </li>
-          <li>
-            Explored how users could understand and access government-issued
-            documents through a digital wallet.
-          </li>
-          <li>
-            Supported iterative review cycles with the wider content design team.
-          </li>
-          <li>
-            Prepared clearly labelled Figma and Miro content sections for
-            handover to in-house designers.
-          </li>
-          <li>
-            Helped ensure content was ready for review, sign-off and translation.
-          </li>
+      <section className="wallet-impact">
+        <div>
+          <p className="wallet-eyebrow">Outcome</p>
+          <h2>Clarity across high-trust moments.</h2>
+        </div>
+        <ul>
+          <li>Improved guidance around identity-verification tasks</li>
+          <li>Strengthened explanations of secure document access</li>
+          <li>Supported iterative review across the wider content team</li>
+          <li>Prepared content for sign-off, handover and translation</li>
+          <li>Kept connected service journeys focused on the user’s task</li>
         </ul>
-      </CaseStudySection>
+      </section>
 
-      <CaseStudySection title="Reflection" eyebrow="Learning">
+      <section className="wallet-reflection">
+        <p className="wallet-eyebrow">Reflection</p>
         <p>
-          This project highlighted how powerful content design can be in secure
-          public digital services. When users are asked to verify their identity
-          or access sensitive documents, the language needs to build trust
-          without becoming long, intimidating or overly technical.
+          High-trust content works best when it is calm, specific and timely. People do
+          not need every technical detail; they need enough transparency to understand
+          the request, feel in control and take the next step confidently.
         </p>
-
-        <p>
-          It also reinforced how important it is to consider the wider ecosystem.
-          The wallet, One Login and identity verification journeys were closely
-          connected, so content needed to help users understand where they were,
-          why they were there and how each step supported the overall service.
-        </p>
-
-        <p>
-          Observing user testing was especially valuable. It showed how different
-          people interpret the same content in different ways, and reinforced the
-          importance of testing language as carefully as interface design.
-        </p>
-      </CaseStudySection>
+      </section>
 
       <CaseStudyFooterNav
         nextHref="/work/markel-1wf"

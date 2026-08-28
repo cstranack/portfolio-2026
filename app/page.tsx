@@ -1,5 +1,6 @@
 import PageWrapper from "@/components/PageWrapper";
 import ProjectCard from "@/components/ProjectCard";
+import HeroSystemVisual from "@/components/HeroSystemVisual";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,15 +8,14 @@ export default function Home() {
     <PageWrapper>
       {/* HERO */}
       <section
+        className="home-hero"
         style={{
-          paddingTop: "7rem",
+          paddingTop: "4.5rem",
           paddingBottom: "5rem",
           minHeight: "72vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
         }}
       >
+        <div className="home-hero-copy">
         <p
           style={{
             color: "var(--accent)",
@@ -23,11 +23,11 @@ export default function Home() {
             marginBottom: "1rem",
           }}
         >
-          UX Designer & UI Developer
+          UI Engineer & Product Designer
         </p>
 
         <h1 style={{ maxWidth: 920 }}>
-          Designing clear, usable products for complex systems.
+          I design complex products — and build the systems that bring them to life.
         </h1>
 
         <p
@@ -38,9 +38,9 @@ export default function Home() {
             marginTop: "1.5rem",
           }}
         >
-          I’m Claire Stranack, a UX designer with experience simplifying enterprise
-          workflows, designing high-fidelity prototypes and building thoughtful digital
-          experiences.
+          I’m Claire Stranack, a designer and front-end engineer specialising in
+          enterprise products, design systems and reusable UI. I turn complex
+          workflows into clear experiences, then help teams deliver them in code.
         </p>
 
         <div
@@ -61,7 +61,7 @@ export default function Home() {
               fontWeight: 600,
             }}
           >
-            View selected work
+            Explore design & engineering work
           </a>
 
           <a
@@ -76,6 +76,9 @@ export default function Home() {
             About me
           </a>
         </div>
+        </div>
+
+        <HeroSystemVisual />
       </section>
 
       {/* WORK */}
@@ -91,7 +94,7 @@ export default function Home() {
             Selected work
           </p>
 
-          <h2>Complex problems, simplified through design.</h2>
+          <h2>From complex workflows to production-ready UI.</h2>
 
           <p
             style={{
@@ -100,26 +103,25 @@ export default function Home() {
               marginTop: "1rem",
             }}
           >
-            A small selection of projects focused on enterprise workflows, product
-            thinking and practical UX delivery.
+            Selected projects spanning enterprise UX, design systems, front-end
+            architecture and practical implementation.
           </p>
         </div>
 
         <div
+          className="project-grid"
           style={{
             marginTop: "2rem",
-            display: "grid",
-            gap: "1.25rem",
           }}
         >
 
           <ProjectCard
             title="Markel Internal Design System"
-            description="Led the design and front-end architecture of a reusable Angular and Bootstrap design system for Markel’s internal product ecosystem."
+            description="Designed and built a reusable Angular component library and documentation platform for Markel’s internal product ecosystem."
             href="/work/markel-design-system"
             imageSrc="/visuals/homepage/alertBanner2.png"
             imageAlt="Preview of the Markel internal design system component library."
-            tags={["Design Systems", "Angular", "Enterprise UX"]}
+            tags={["Angular", "Component Architecture", "Design Systems"]}
           />
 
           <ProjectCard
@@ -203,9 +205,9 @@ export default function Home() {
             },
             {
               title: "International conferencing app",
-              role: "Front-end Developer",
+              role: "Front-end Engineering",
               description:
-                "Built front-end features for a three-day event app supporting hundreds of attendees, agendas and functionality such as image upload.",
+                "Built and delivered front-end features for a three-day international event app, supporting hundreds of attendees, complex agendas and image uploads.",
             },
             {
               title: "Customer collection app",
@@ -249,124 +251,41 @@ export default function Home() {
         </div>
       </section>
 
-    <section id="about" style={{ marginTop: "7rem", paddingBottom: "5rem" }}>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 1.4fr) minmax(260px, 0.8fr)",
-          gap: "3rem",
-          alignItems: "center",
-        }}
-      >
-        <div style={{ maxWidth: 760 }}>
-          <p
-            style={{
-              color: "var(--accent)",
-              fontWeight: 600,
-              marginBottom: "0.75rem",
-            }}
-          >
-            About
-          </p>
+      <section id="about" className="about-section">
+        <div className="about-heading">
+          <p>About me</p>
+          <h2>I’m happiest in the space between <span>figuring it out</span> and <span>making it real.</span></h2>
+        </div>
 
-          <h2>Designer with a developer’s understanding of delivery.</h2>
+        <div className="about-layout">
+          <div className="about-portrait-wrap">
+            <div className="about-portrait-grid" />
+            <div className="about-portrait-card">
+              <Image src="/images/me2.png" alt="Claire Stranack" width={700} height={900} />
+            </div>
+            <div className="about-float-card about-float-role"><i /> Designer <span>+</span> Developer</div>
+            <div className="about-float-card about-float-place"><span>⌁</span><div><small>Based in</small><strong>London, UK</strong></div></div>
+            <div className="about-personal-orbit"><span>Sewing</span><span>Garden & pond</span><span>Motorbikes</span></div>
+          </div>
 
-          <p
-            style={{
-              color: "var(--muted)",
-              fontSize: "1.1rem",
-              marginTop: "1rem",
-            }}
-          >
-            I’m a UX Designer and UI Developer with experience working across complex
-            enterprise platforms, design systems and high-fidelity product
-            experiences. I enjoy turning messy workflows into clearer, more usable
-            digital products.
-          </p>
+          <div className="about-copy">
+            <p className="about-lede">I design complex digital products and build the systems that help teams deliver them well.</p>
+            <p>I’ve worked across enterprise platforms, design systems and high-fidelity product experiences—turning messy workflows into interfaces that feel clear, considered and genuinely usable.</p>
+            <p>Because I work in both design and front-end development, I can move between user needs, business constraints and implementation detail without losing the thread.</p>
 
-          <p
-            style={{
-              color: "var(--muted)",
-              fontSize: "1.1rem",
-              marginTop: "1rem",
-            }}
-          >
-            My background in both design and front-end development helps me bridge
-            the gap between user needs, business goals and practical implementation.
-          </p>
+            <div className="about-overlap" aria-label="The overlap between product design and front-end engineering">
+              <div><span>Think in</span><strong>Journeys</strong><small>Research · flows · strategy</small></div>
+              <div className="about-overlap-core"><i>+</i><strong>Make it work</strong><small>The useful middle</small></div>
+              <div><span>Build in</span><strong>Components</strong><small>UI · systems · code</small></div>
+            </div>
 
-          <p
-            style={{
-              color: "var(--muted)",
-              fontSize: "1.1rem",
-              marginTop: "1rem",
-            }}
-          >
-            Outside of work, I’m usually making, fixing or learning something — from
-            sewing my own clothes to working on my garden and pond, or getting out on
-            my motorbike. I like practical, hands-on projects, which is probably why I
-            enjoy design work that moves from messy ideas into something clear and
-            useful.
-          </p>
-
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "0.75rem",
-              marginTop: "2rem",
-            }}
-          >
-            {[
-              "Enterprise UX",
-              "Design systems",
-              "Prototyping",
-              "User journeys",
-              "Front-end implementation",
-              "Stakeholder collaboration",
-            ].map((skill) => (
-              <span
-                key={skill}
-                style={{
-                  border: "1px solid var(--border)",
-                  borderRadius: "999px",
-                  padding: "0.5rem 0.85rem",
-                  color: "var(--muted)",
-                  background: "var(--surface)",
-                  fontSize: "0.95rem",
-                }}
-              >
-                {skill}
-              </span>
-            ))}
+            <div className="about-note">
+              <span>Off screen</span>
+              <p>I’m usually making, fixing or learning something—sewing clothes, working on my garden and pond, or getting out on my motorbike. Apparently I don’t really do “hands off.”</p>
+            </div>
           </div>
         </div>
-
-        <div
-          style={{
-            background:
-              "linear-gradient(135deg, var(--accent-soft), var(--surface))",
-            border: "1px solid var(--border)",
-            borderRadius: "28px",
-            padding: "1rem",
-          }}
-        >
-          <Image
-            src="/images/me2.png"
-            alt="Claire Stranack"
-            width={700}
-            height={900}
-            style={{
-              width: "100%",
-              height: "auto",
-              borderRadius: "20px",
-              display: "block",
-              objectFit: "cover",
-            }}
-          />
-        </div>
-      </div>
-    </section>
+      </section>
 
 
     </PageWrapper>

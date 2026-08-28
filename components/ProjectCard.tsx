@@ -19,32 +19,37 @@ export default function ProjectCard({
   imageAlt = "",
 }: ProjectCardProps) {
   return (
-    <Link href={href} style={{ display: "block" }}>
+    <Link href={href} className="project-card-link">
       <article
         className="project-card"
         style={{
           background: "var(--surface)",
           border: "1px solid var(--border)",
           borderRadius: "20px",
-          padding: "1.25rem",
+          padding: "1rem",
           transition: "transform 0.2s ease, box-shadow 0.2s ease",
           overflow: "hidden",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         {imageSrc && (
           <div
+            className="project-card-media"
             style={{
               position: "relative",
               width: "100%",
-              aspectRatio: "16 / 8",
-              borderRadius: "16px",
+              aspectRatio: "16 / 9",
+              borderRadius: "14px",
               overflow: "hidden",
               background: "var(--surface-soft)",
               border: "1px solid var(--border)",
-              marginBottom: "1.25rem",
+              marginBottom: "1rem",
             }}
           >
             <Image
+              className="project-card-image"
               src={imageSrc}
               alt={imageAlt}
               fill
@@ -52,7 +57,7 @@ export default function ProjectCard({
                 objectFit: "cover",
                 objectPosition: "left top",
               }}
-              sizes="(max-width: 700px) 100vw, 1000px"
+              sizes="(max-width: 700px) 100vw, (max-width: 1199px) 50vw, 33vw"
             />
           </div>
         )}
@@ -77,6 +82,7 @@ export default function ProjectCard({
           </p>
 
           <span
+            className="project-card-arrow"
             style={{
               color: "var(--accent)",
               fontWeight: 600,
@@ -97,7 +103,8 @@ export default function ProjectCard({
               display: "flex",
               flexWrap: "wrap",
               gap: "0.5rem",
-              marginTop: "1rem",
+              marginTop: "auto",
+              paddingTop: "1rem",
             }}
           >
             {tags.map((tag) => (
