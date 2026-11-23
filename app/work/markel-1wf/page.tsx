@@ -10,8 +10,8 @@ import WorkflowReframeVisual from "@/components/WorkflowReframeVisual";
 export default function MarkelOneWorkflowPage() {
   return (
     <PageWrapper>
-      <Link href="/#work" className="workflow-back-link">
-        ← Back to selected work
+      <Link href="/" className="workflow-back-link">
+        ← Back to home
       </Link>
 
       <section className="workflow-hero">

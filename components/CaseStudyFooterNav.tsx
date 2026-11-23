@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BackToTopButton from "@/components/BackToTopButton";
 
 type CaseStudyFooterNavProps = {
   nextHref?: string;
@@ -21,8 +22,8 @@ export default function CaseStudyFooterNav({
         flexWrap: "wrap",
       }}
     >
-      <Link href="/#work" style={{ color: "var(--muted)" }}>
-        ← Back to selected work
+      <Link href="/" style={{ color: "var(--muted)" }}>
+        ← Back to home
       </Link>
 
       {nextHref && (
@@ -30,6 +31,7 @@ export default function CaseStudyFooterNav({
           {nextLabel} →
         </Link>
       )}
+      <BackToTopButton />
     </nav>
   );
 }

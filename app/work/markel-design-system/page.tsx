@@ -9,8 +9,8 @@ import DesignSystemFeature from "@/components/DesignSystemFeature";
 export default function MarkelDesignSystemPage() {
   return (
     <PageWrapper>
-      <Link href="/#work" className="ds-back-link">
-        ← Back to selected work
+      <Link href="/" className="ds-back-link">
+        ← Back to home
       </Link>
 
       <section className="ds-case-hero">

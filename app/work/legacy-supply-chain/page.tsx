@@ -10,8 +10,8 @@ import SupplyJourneyVisual from "@/components/SupplyJourneyVisual";
 export default function LegacySupplyChainPage() {
   return (
     <PageWrapper>
-      <Link href="/#work" className="supply-back-link">
-        ← Back to selected work
+      <Link href="/" className="supply-back-link">
+        ← Back to home
       </Link>
 
       <section className="supply-case-hero">

@@ -10,8 +10,8 @@ import IdentityTrustVisual from "@/components/IdentityTrustVisual";
 export default function PublicSectorAppPage() {
   return (
     <PageWrapper>
-      <Link href="/#work" className="wallet-back-link">
-        ← Back to selected work
+      <Link href="/" className="wallet-back-link">
+        ← Back to home
       </Link>
 
       <section className="wallet-case-hero">

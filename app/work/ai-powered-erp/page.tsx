@@ -10,7 +10,7 @@ import LumiCharacter from "@/components/LumiCharacter";
 export default function AiPoweredErpPage() {
   return (
     <PageWrapper>
-      <Link href="/#work" className="ai-back-link">← Back to selected work</Link>
+      <Link href="/" className="ai-back-link">← Back to home</Link>
 
       <section className="ai-case-hero">
         <div className="ai-case-copy">
