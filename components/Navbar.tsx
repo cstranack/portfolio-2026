@@ -1,22 +1,14 @@
 "use client";
 
+import Link from "next/link";
 
 export default function Navbar() {
 
   return (
-    <header
-      style={{
-        position: "sticky",
-        top: 0,
-        background: "rgba(251, 250, 248, 0.85)",
-        backdropFilter: "blur(16px)",
-        borderBottom: "1px solid var(--border)",
-        zIndex: 10,
-      }}
-    >
+    <header className="site-header">
       <div
         style={{
-          maxWidth: 1040,
+          maxWidth: 1120,
           margin: "0 auto",
           padding: "1rem 1.5rem",
           display: "flex",
@@ -25,9 +17,9 @@ export default function Navbar() {
         }}
       >
         {/* Logo / Name */}
-        <div style={{ fontWeight: 700, letterSpacing: "-0.03em" }}>
+        <Link href="/#top" className="site-brand" aria-label="Claire Stranack — back to homepage">
           Claire Stranack
-        </div>
+        </Link>
 
         {/* Desktop links */}
         <nav style={{ display: "flex", gap: "1.5rem" }}>

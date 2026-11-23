@@ -2,77 +2,82 @@ import PageWrapper from "@/components/PageWrapper";
 import ProjectCard from "@/components/ProjectCard";
 import HeroSystemVisual from "@/components/HeroSystemVisual";
 import Image from "next/image";
+import type { CSSProperties } from "react";
+
+const hobbies = [
+  {
+    number: "01",
+    name: "Gardening",
+    images: [
+      { src: "/images/hobbies/gardening-1.jpg", alt: "Tomato seedlings growing in Claire's garden" },
+      { src: "/images/hobbies/gardening-2.png", alt: "Seedlings and flowers in Claire's greenhouse" },
+    ],
+  },
+  {
+    number: "02",
+    name: "Reading",
+    images: [
+      { src: "/images/hobbies/reading.jpg", alt: "A cat peering over a copy of Pride and Prejudice" },
+    ],
+  },
+  {
+    number: "03",
+    name: "Motorbiking",
+    images: [
+      { src: "/images/hobbies/motorbiking-1.jpg", alt: "Claire in motorcycle gear beside two motorbikes" },
+      { src: "/images/hobbies/motorbiking-2.png", alt: "Claire with a blue Suzuki motorbike" },
+    ],
+  },
+  {
+    number: "04",
+    name: "Sewing",
+    images: [
+      { src: "/images/hobbies/sewing-3.png", alt: "A dark blue dress made by Claire" },
+      { src: "/images/hobbies/sewing-2.jpg", alt: "A cat supervising Claire's sewing machine" },
+      { src: "/images/hobbies/sewing-1.jpg", alt: "Claire sewing dark blue fabric with an overlocker" },
+    ],
+  },
+  {
+    number: "05",
+    name: "Gaming",
+    previewClass: "is-game-grid",
+    images: [
+      { src: "/images/hobbies/games/gta-v.jpg", alt: "Grand Theft Auto V" },
+      { src: "/images/hobbies/games/planet-zoo.jpg", alt: "Planet Zoo" },
+      { src: "/images/hobbies/games/planet-zoo-2.jpg", alt: "Planet Zoo 2" },
+      { src: "/images/hobbies/games/teardown.jpg", alt: "Teardown" },
+      { src: "/images/hobbies/games/7-days-to-die.jpg", alt: "7 Days to Die" },
+    ],
+  },
+];
 
 export default function Home() {
   return (
     <PageWrapper>
       {/* HERO */}
-      <section
-        className="home-hero"
-        style={{
-          paddingTop: "4.5rem",
-          paddingBottom: "5rem",
-          minHeight: "72vh",
-        }}
-      >
+      <section id="top" className="home-hero">
         <div className="home-hero-copy">
-        <p
-          style={{
-            color: "var(--accent)",
-            fontWeight: 600,
-            marginBottom: "1rem",
-          }}
-        >
+        <p className="home-hero-eyebrow">
           UI Engineer & Product Designer
         </p>
 
-        <h1 style={{ maxWidth: 920 }}>
-          I design complex products — and build the systems that bring them to life.
+        <h1 className="home-hero-title">
+          <span className="home-hero-title-lead">I design complex products</span>
+          <span className="home-hero-title-tail">and build the systems that bring them to life.</span>
         </h1>
 
-        <p
-          style={{
-            fontSize: "1.25rem",
-            color: "var(--muted)",
-            maxWidth: 680,
-            marginTop: "1.5rem",
-          }}
-        >
+        <p className="home-hero-intro">
           I’m Claire Stranack, a designer and front-end engineer specialising in
           enterprise products, design systems and reusable UI. I turn complex
           workflows into clear experiences, then help teams deliver them in code.
         </p>
 
-        <div
-          style={{
-            display: "flex",
-            gap: "1rem",
-            flexWrap: "wrap",
-            marginTop: "2rem",
-          }}
-        >
-          <a
-            href="#work"
-            style={{
-              background: "var(--accent)",
-              color: "var(--bg)",
-              padding: "0.85rem 1.1rem",
-              borderRadius: "999px",
-              fontWeight: 600,
-            }}
-          >
+        <div className="home-hero-actions">
+          <a href="#work" className="home-hero-primary">
             Explore design & engineering work
           </a>
 
-          <a
-            href="#about"
-            style={{
-              border: "1px solid var(--border)",
-              padding: "0.85rem 1.1rem",
-              borderRadius: "999px",
-              fontWeight: 600,
-            }}
-          >
+          <a href="#about" className="home-hero-secondary">
             About me
           </a>
         </div>
@@ -265,7 +270,6 @@ export default function Home() {
             </div>
             <div className="about-float-card about-float-role"><i /> Designer <span>+</span> Developer</div>
             <div className="about-float-card about-float-place"><span>⌁</span><div><small>Based in</small><strong>London, UK</strong></div></div>
-            <div className="about-personal-orbit"><span>Sewing</span><span>Garden & pond</span><span>Motorbikes</span></div>
           </div>
 
           <div className="about-copy">
@@ -278,11 +282,36 @@ export default function Home() {
               <div className="about-overlap-core"><i>+</i><strong>Make it work</strong><small>The useful middle</small></div>
               <div><span>Build in</span><strong>Components</strong><small>UI · systems · code</small></div>
             </div>
+          </div>
+        </div>
 
-            <div className="about-note">
-              <span>Off screen</span>
-              <p>I’m usually making, fixing or learning something—sewing clothes, working on my garden and pond, or getting out on my motorbike. Apparently I don’t really do “hands off.”</p>
-            </div>
+        <div className="about-hobbies">
+          <div className="about-hobbies-heading">
+            <span>Beyond the screen</span>
+            <h3>I’ve got an odd mix of hobbies.</h3>
+            <p>Talk to me about…</p>
+          </div>
+          <div className="about-hobby-list">
+            {hobbies.map((hobby) => (
+              <article key={hobby.name} tabIndex={0}>
+                <div className={`about-hobby-preview${hobby.images.length > 1 ? ` is-collage is-${hobby.images.length}` : ""}${"previewClass" in hobby ? ` ${hobby.previewClass}` : ""}`}>
+                  {hobby.images.length ? hobby.images.map((photo, index) => (
+                    <div className="about-hobby-photo" key={photo.src} style={{ "--photo-index": index } as CSSProperties}>
+                      <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 560px) 42vw, 230px" />
+                    </div>
+                  )) : (
+                    <div className="about-hobby-game">
+                      <span>PLAYER 01</span>
+                      <div><i /><i /><i /><i /></div>
+                      <strong>READY?</strong>
+                    </div>
+                  )}
+                </div>
+                <span>{hobby.number}</span>
+                <strong>{hobby.name}</strong>
+                <i className="about-hobby-orbit" />
+              </article>
+            ))}
           </div>
         </div>
       </section>

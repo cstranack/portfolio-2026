@@ -26,9 +26,6 @@ export default function Footer() {
           <a href="https://www.linkedin.com/" target="_blank">
             LinkedIn
           </a>
-          <a href="https://clairestranack.co.uk" target="_blank">
-            Current portfolio
-          </a>
         </div>
       </div>
     </footer>
